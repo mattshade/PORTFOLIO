@@ -10,10 +10,10 @@ interface EngagementData {
 }
 
 const data: EngagementData[] = [
-  { business: 'News Digital', activeUsers: 14, avgActiveDays: 8.4, totalPrompts: 892, engagementLevel: 'high' },
-  { business: 'Local Stations', activeUsers: 55, avgActiveDays: 7.8, totalPrompts: 3980, engagementLevel: 'high' },
-  { business: 'Telemundo', activeUsers: 22, avgActiveDays: 9.1, totalPrompts: 2310, engagementLevel: 'high' },
-  { business: 'News Editorial', activeUsers: 13, avgActiveDays: 4.2, totalPrompts: 528, engagementLevel: 'medium' },
+  { business: 'Corporate Digital', activeUsers: 14, avgActiveDays: 8.4, totalPrompts: 892, engagementLevel: 'high' },
+  { business: 'Regional Operations', activeUsers: 55, avgActiveDays: 7.8, totalPrompts: 3980, engagementLevel: 'high' },
+  { business: 'International Division', activeUsers: 22, avgActiveDays: 9.1, totalPrompts: 2310, engagementLevel: 'high' },
+  { business: 'Content & Editorial', activeUsers: 13, avgActiveDays: 4.2, totalPrompts: 528, engagementLevel: 'medium' },
   { business: 'HQ Operations', activeUsers: 6, avgActiveDays: 3.1, totalPrompts: 215, engagementLevel: 'low' },
   { business: 'Marketing', activeUsers: 4, avgActiveDays: 2.8, totalPrompts: 164, engagementLevel: 'low' },
 ];

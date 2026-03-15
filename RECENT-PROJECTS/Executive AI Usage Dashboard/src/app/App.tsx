@@ -161,7 +161,7 @@ export default function App() {
             <div>
               <div className="text-gray-700 mb-1">Capacity Risk</div>
               <p className="text-gray-600">
-                Telemundo at 92% Firefly capacity. Consider reallocating unused licenses from News (47% unused) or Local (41% unused).
+                International Division at 92% Firefly capacity. Consider reallocating unused licenses from Corporate HQ (47% unused) or Regional Operations (41% unused).
               </p>
             </div>
             <div>

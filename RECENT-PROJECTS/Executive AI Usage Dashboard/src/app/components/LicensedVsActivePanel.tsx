@@ -4,9 +4,9 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import copilotGhLogo from '@/assets/3fe29f24369b13a226c9a98e9ecd27e28ecce4de.png';
 
 const data = [
-  { segment: 'News', enabled: 42, pending: 3, allocated: 45, active: 32, inactive: 13 },
-  { segment: 'Local', enabled: 81, pending: 6, allocated: 87, active: 65, inactive: 22 },
-  { segment: 'Telemundo', enabled: 41, pending: 3, allocated: 44, active: 27, inactive: 17 },
+  { segment: 'Corporate HQ', enabled: 42, pending: 3, allocated: 45, active: 32, inactive: 13 },
+  { segment: 'Regional Operations', enabled: 81, pending: 6, allocated: 87, active: 65, inactive: 22 },
+  { segment: 'International Division', enabled: 41, pending: 3, allocated: 44, active: 27, inactive: 17 },
 ];
 
 export function LicensedVsActivePanel() {

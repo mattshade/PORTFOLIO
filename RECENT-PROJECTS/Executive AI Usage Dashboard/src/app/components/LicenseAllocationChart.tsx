@@ -12,9 +12,9 @@ interface LicenseData {
 }
 
 const data: LicenseData[] = [
-  { segment: 'News', purchased: 69, remaining: 60, total: 129, utilizationRate: 53 },
-  { segment: 'Local', purchased: 167, remaining: 114, total: 281, utilizationRate: 59 },
-  { segment: 'Telemundo', purchased: 81, remaining: 7, total: 88, utilizationRate: 92 },
+  { segment: 'Corporate HQ', purchased: 69, remaining: 60, total: 129, utilizationRate: 53 },
+  { segment: 'Regional Operations', purchased: 167, remaining: 114, total: 281, utilizationRate: 59 },
+  { segment: 'International Division', purchased: 81, remaining: 7, total: 88, utilizationRate: 92 },
 ];
 
 export function LicenseAllocationChart() {

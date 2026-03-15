@@ -20,7 +20,7 @@ describe('LicensedVsActivePanel', () => {
         render(<LicensedVsActivePanel />);
         expect(screen.getByText('GitHub Copilot Seats by Segment')).toBeInTheDocument();
 
-        // Total Allocated calculation: 45 (News) + 87 (Local) + 44 (Telemundo) = 176
+        // Total Allocated calculation: 45 (Corporate HQ) + 87 (Regional Operations) + 44 (International Division) = 176
         expect(screen.getByText('176')).toBeInTheDocument();
         expect(screen.getByText('Seats Allocated')).toBeInTheDocument();
     });
@@ -34,13 +34,13 @@ describe('LicensedVsActivePanel', () => {
 
     it('renders the segment data rows', () => {
         render(<LicensedVsActivePanel />);
-        expect(screen.getByText('News')).toBeInTheDocument();
+        expect(screen.getByText('Corporate HQ')).toBeInTheDocument();
         expect(screen.getByText('32 of 45')).toBeInTheDocument();
 
-        expect(screen.getByText('Local')).toBeInTheDocument();
+        expect(screen.getByText('Regional Operations')).toBeInTheDocument();
         expect(screen.getByText('65 of 87')).toBeInTheDocument();
 
-        expect(screen.getByText('Telemundo')).toBeInTheDocument();
+        expect(screen.getByText('International Division')).toBeInTheDocument();
         expect(screen.getByText('27 of 44')).toBeInTheDocument();
     });
 });
