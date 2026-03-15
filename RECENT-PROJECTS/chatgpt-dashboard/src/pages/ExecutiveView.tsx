@@ -107,7 +107,7 @@ export const ExecutiveView: React.FC = () => {
             {/* ── AI Portfolio Comparison ──────────────────────────────────────── */}
             <section className="glass-card overflow-hidden">
                 <div className="px-6 pt-5 pb-3 border-b border-gray-100">
-                    <h3 className="font-bold text-base text-gray-800">NBC News Group AI Portfolio</h3>
+                    <h3 className="font-bold text-base text-gray-800">Enterprise AI Portfolio</h3>
                     <p className="text-xs text-gray-400 mt-0.5">License utilization across active AI platforms</p>
                 </div>
                 <div className="divide-y divide-gray-100">

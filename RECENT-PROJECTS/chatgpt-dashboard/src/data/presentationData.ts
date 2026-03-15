@@ -37,7 +37,7 @@ const createSegmentRows = (
             projectsCreated: 0,
             businessSegment: segment,
             organization: segment + " Org",
-            parentOrg: "NBCUniversal",
+            parentOrg: "Enterprise",
             bu: "General",
             jobFunction: "Employee",
             jobTitle: "Staff"
@@ -46,13 +46,13 @@ const createSegmentRows = (
     return rows;
 };
 
-// 1. Generate Base Segments
+// 1. Generate Base Segments (generic business units)
 const segments = [
-    { name: "News Group HQ", enabled: 210, active: 182, msgs: 15084 },
-    { name: "NBCUniversal Local", enabled: 174, active: 137, msgs: 11813 },
-    { name: "Telemundo Enterprises", enabled: 169, active: 150, msgs: 19712 },
-    { name: "NBC Editorial", enabled: 135, active: 106, msgs: 7027 },
-    { name: "Today/Lifestyle", enabled: 2, active: 1, msgs: 11 },
+    { name: "Corporate HQ", enabled: 210, active: 182, msgs: 15084 },
+    { name: "Regional Operations", enabled: 174, active: 137, msgs: 11813 },
+    { name: "International Division", enabled: 169, active: 150, msgs: 19712 },
+    { name: "Content & Editorial", enabled: 135, active: 106, msgs: 7027 },
+    { name: "Media & Lifestyle", enabled: 2, active: 1, msgs: 11 },
 ];
 
 let generatedRows: PlatformRow[] = [];
@@ -93,7 +93,7 @@ const createDummyParticipants = (
         result.push({
             firstName: p.firstName || "User",
             lastName: p.lastName || String(i + 1),
-            email: p.email || `user${i}@nbc.com`,
+            email: p.email || `user${i}@company.com`,
             regTime: "2026-01-01T10:00:00",
             status: "Registered",
             department: p.department || "General",
@@ -105,13 +105,13 @@ const createDummyParticipants = (
 
     // Mix 2: Fill the rest with dummies
     const titles = ["Producer", "Editor", "Analyst", "Manager", "Director", "Coordinator", "Specialist"];
-    const depts = ["News", "Sports", "Ent", "Corp", "Tech", "Legal", "Ad Sales"];
+    const depts = ["Operations", "Product", "Marketing", "Finance", "Tech", "Legal", "Sales"];
 
     for (let i = result.length; i < countNeeded; i++) {
         result.push({
             firstName: "Participant",
             lastName: String(i + 1),
-            email: `participant${i}@nbc.com`,
+            email: `participant${i}@company.com`,
             regTime: "2026-01-01T10:00:00",
             status: "Registered",
             department: depts[i % depts.length],
@@ -137,7 +137,7 @@ export const PRELOADED_MEETINGS: Meeting[] = [
         conversionRate: 60.0,
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
-            { department: "News", jobTitle: "Editor", question: "How to prompt for summaries?" }
+            { department: "Content", jobTitle: "Editor", question: "How to prompt for summaries?" }
         ], 3)
     },
     {
@@ -151,8 +151,8 @@ export const PRELOADED_MEETINGS: Meeting[] = [
         conversionRate: 50.0,
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
-            { department: "Local", jobTitle: "Producer", question: "Is Copilot better?" },
-            { department: "Telemundo", jobTitle: "Marketing", question: "Image generation rights?" }
+            { department: "Operations", jobTitle: "Producer", question: "Is Copilot better?" },
+            { department: "Marketing", jobTitle: "Specialist", question: "Image generation rights?" }
         ], 5)
     },
     {
@@ -167,7 +167,7 @@ export const PRELOADED_MEETINGS: Meeting[] = [
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
             { department: "Legal", jobTitle: "Counsel", question: "Governance on uploads?" },
-            { department: "Editorial", jobTitle: "Writer", question: "Can it write in Spanish?" }
+            { department: "Content", jobTitle: "Writer", question: "Can it write in Spanish?" }
         ], 10)
     },
     {
@@ -181,7 +181,7 @@ export const PRELOADED_MEETINGS: Meeting[] = [
         conversionRate: 77.8,
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
-            { department: "Corp", jobTitle: "Analyst", question: "Measurement ROI?" }
+            { department: "Finance", jobTitle: "Analyst", question: "Measurement ROI?" }
         ], 7)
     }
 ];

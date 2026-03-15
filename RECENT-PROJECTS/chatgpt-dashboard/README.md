@@ -8,7 +8,7 @@ A modern, high-performance Executive Dashboard for tracking the adoption, engage
 
 This dashboard serves as the central source of truth for the **ChatGPT Enablement Program**. It transforms raw platform usage data and Office Hours attendance logs into actionable intelligence, allowing stakeholders to visualize:
 
-*   **Adoption Rates**: Enabled vs. active users broken down by Business Segment (News, Local, Telemundo, etc.).
+*   **Adoption Rates**: Enabled vs. active users broken down by Business Segment (e.g. Corporate HQ, Regional Operations, Content & Editorial).
 *   **Feature Depth**: Usage of advanced features like Custom GPTs, Projects, and Tools.
 *   **Engagement Quality**: Beyond simple login counts, we track "Average Messages per Active User" to gauge real value.
 *   **Office Hours Intelligence**: Analyze attendance trends and extract trending topics from participant questions using keyword analysis.

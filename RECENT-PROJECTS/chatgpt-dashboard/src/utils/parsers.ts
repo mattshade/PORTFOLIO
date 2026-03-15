@@ -12,8 +12,8 @@ export const parsePlatformExcel = async (file: File): Promise<PlatformRow[]> => 
     const data = await file.arrayBuffer();
     const workbook = read(data);
 
-    const sheetName = workbook.SheetNames.find(n => n.toLowerCase() === 'news data'); // "News Data" exactly or close
-    if (!sheetName) throw new Error("Missing required sheet: 'News Data'");
+    const sheetName = workbook.SheetNames.find(n => n.toLowerCase() === 'platform data'); // "Platform Data" or "Usage Data"
+    if (!sheetName) throw new Error("Missing required sheet: 'Platform Data'");
 
     const sheet = workbook.Sheets[sheetName];
     const rawRows: any[] = utils.sheet_to_json(sheet); // Assume headers are row 1
