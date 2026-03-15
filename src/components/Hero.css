@@ -6,6 +6,9 @@
   justify-content: center;
   padding: 2rem 1.5rem 4rem;
   overflow: hidden;
+  /* Extend hero background under the fixed nav to remove black gap */
+  margin-top: -72px;
+  padding-top: calc(72px + 2rem);
 }
 
 .hero-bg {
