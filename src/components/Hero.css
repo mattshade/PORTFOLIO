@@ -18,7 +18,11 @@
 /* Technical grid — stronger, more immersive */
 .hero-grid {
   position: absolute;
-  inset: -50%;
+  left: 50%;
+  top: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
   background-image:
     linear-gradient(rgba(34, 211, 238, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
@@ -251,7 +255,8 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 2rem 1rem 3rem;
+    align-items: flex-start;
+    padding: 15vh 1rem 3rem;
   }
 
   .hero-title {
