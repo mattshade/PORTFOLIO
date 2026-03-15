@@ -1,7 +1,33 @@
+import { useRef } from 'react'
 import { projects } from '../data/projects'
 import './Projects.css'
 
-export function Projects() {
+const READING_DELAY_MS = 1400
+
+export function Projects({ onCardReading }: { onCardReading?: (rect: DOMRect | null) => void }) {
+  const hoverRef = useRef<HTMLElement | null>(null)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleEnter = (e: React.MouseEvent) => {
+    hoverRef.current = e.currentTarget as HTMLElement
+    if (timerRef.current) clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
+      const el = hoverRef.current
+      if (el && onCardReading) {
+        onCardReading(el.getBoundingClientRect())
+      }
+    }, READING_DELAY_MS)
+  }
+
+  const handleLeave = () => {
+    hoverRef.current = null
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
+    }
+    onCardReading?.(null)
+  }
+
   return (
     <section id="projects" className="section projects">
       <div className="section-inner">
@@ -10,8 +36,10 @@ export function Projects() {
           {projects.map((p, i) => (
             <article
               key={p.id}
-              className="project-card glass"
+              className={`project-card glass${p.id === 'mattshadecooks' ? ' project-card-wide' : ''}`}
               style={{ animationDelay: `${i * 60}ms` }}
+              onMouseEnter={handleEnter}
+              onMouseLeave={handleLeave}
             >
               <a
                 href={p.href}

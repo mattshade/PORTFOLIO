@@ -8,10 +8,18 @@ class Boid {
   maxSpeed: number
   maxForce: number
   index: number
+  drawSeed: number
+  isLanded: boolean
+  landX: number
+  landY: number
 
   constructor(x: number, y: number, index: number) {
     this.x = x
     this.y = y
+    this.drawSeed = Math.random()
+    this.isLanded = false
+    this.landX = 0
+    this.landY = 0
     this.vx = (Math.random() * 2 - 1) * 2
     this.vy = (Math.random() * 2 - 1) * 2
     this.maxSpeed = 2.5
@@ -27,7 +35,7 @@ class Boid {
   }
 
   align(boids: Boid[]) {
-    let perceptionRadius = 50
+    let perceptionRadius = 28
     let steeringX = 0
     let steeringY = 0
     let total = 0
@@ -61,7 +69,7 @@ class Boid {
   }
 
   cohesion(boids: Boid[]) {
-    let perceptionRadius = 50
+    let perceptionRadius = 28
     let steeringX = 0
     let steeringY = 0
     let total = 0
@@ -98,7 +106,7 @@ class Boid {
   }
 
   separation(boids: Boid[]) {
-    let perceptionRadius = 24
+    let perceptionRadius = 18
     let steeringX = 0
     let steeringY = 0
     let total = 0
@@ -139,10 +147,9 @@ class Boid {
     let alignment = this.align(boids)
     let cohesion = this.cohesion(boids)
     let separation = this.separation(boids)
-
-    // Weaker cohesion (0.4) so birds spread out instead of clustering
-    this.vx += alignment.x + cohesion.x * 0.4 + separation.x
-    this.vy += alignment.y + cohesion.y * 0.4 + separation.y
+    const flockWeight = 0.12
+    this.vx += (alignment.x + cohesion.x + separation.x) * flockWeight
+    this.vy += (alignment.y + cohesion.y + separation.y) * flockWeight
   }
 
   /**
@@ -195,8 +202,7 @@ class Boid {
   }
 
   /**
-   * Magnetic lens + flow — birds gently bend toward the cursor from afar,
-   * then curve around it like water past a rock. No jarring scatter.
+   * Repulsion — birds fly away from the cursor when it gets close.
    */
   interact(
     smoothedMx: number,
@@ -212,27 +218,18 @@ class Boid {
     const dx = this.x - cx
     const dy = this.y - cy
     const d = Math.hypot(dx, dy)
-    const outerRadius = 260
-    const innerRadius = 40
-    if (d > outerRadius || d < 6) return
+    const outerRadius = 220
+    const innerRadius = 30
+    if (d > outerRadius || d < 4) return
 
     const dirX = dx / d
     const dirY = dy / d
-    const tangentX = -dirY
-    const tangentY = dirX
-
+    const eff = influence * breath
     const t = d / outerRadius
     const bell = 1 - t * t
-    const eff = influence * breath
-
-    const pullZone = d > innerRadius
-    const pullStrength = pullZone ? 0.055 * eff * (1 - (innerRadius / d)) : 0
-    this.vx -= dirX * pullStrength
-    this.vy -= dirY * pullStrength
-
-    const flowStrength = 0.14 * eff * bell
-    this.vx += tangentX * flowStrength
-    this.vy += tangentY * flowStrength
+    const repulsionStrength = 0.18 * eff * (1 - (innerRadius / d)) * bell
+    this.vx += dirX * repulsionStrength
+    this.vy += dirY * repulsionStrength
   }
 
   update() {
@@ -253,10 +250,12 @@ class Boid {
     this.vy += Math.sin(angle) * mag
   }
 
-  draw(ctx: CanvasRenderingContext2D) {
+  draw(ctx: CanvasRenderingContext2D, jumpOffset = 0) {
     ctx.save()
-    const angle = Math.atan2(this.vy, this.vx)
-    ctx.translate(this.x, this.y)
+    const drawX = this.isLanded ? this.landX : this.x
+    const drawY = this.isLanded ? this.landY + jumpOffset : this.y
+    const angle = this.isLanded ? 0 : Math.atan2(this.vy, this.vx)
+    ctx.translate(drawX, drawY)
     ctx.rotate(angle)
 
     ctx.beginPath()
@@ -275,10 +274,22 @@ class Boid {
   }
 }
 
-export function BirdsFly({ mouseX, mouseY, isHovering }: { mouseX: number; mouseY: number; isHovering: boolean }) {
+export function BirdsFly({
+  mouseX,
+  mouseY,
+  isHovering,
+  scrollY = 0,
+  landingTarget = null,
+}: {
+  mouseX: number
+  mouseY: number
+  isHovering: boolean
+  scrollY?: number
+  landingTarget?: DOMRect | null
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const propsRef = useRef({ mouseX, mouseY, isHovering })
-  propsRef.current = { mouseX, mouseY, isHovering }
+  const propsRef = useRef({ mouseX, mouseY, isHovering, scrollY, landingTarget })
+  propsRef.current = { mouseX, mouseY, isHovering, scrollY, landingTarget }
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -310,7 +321,7 @@ export function BirdsFly({ mouseX, mouseY, isHovering }: { mouseX: number; mouse
       flock.length = 0
       const w = Math.max(1, width)
       const h = Math.max(1, height)
-      for (let i = 0; i < 60; i++) {
+      for (let i = 0; i < 28; i++) {
         flock.push(new Boid(Math.random() * w, Math.random() * h, i))
       }
     }
@@ -337,25 +348,77 @@ export function BirdsFly({ mouseX, mouseY, isHovering }: { mouseX: number; mouse
           return
         }
 
-        const { mouseX: mx, mouseY: my, isHovering: hovering } = propsRef.current
+        const { mouseX: mx, mouseY: my, isHovering: hovering, scrollY: sy, landingTarget: target } = propsRef.current
         smoothX += (mx - smoothX) * LERP
         smoothY += (my - smoothY) * LERP
         hoverProgress = Math.max(0, Math.min(1, hoverProgress + (hovering ? HOVER_RAMP : -HOVER_RAMP * 2)))
         const breath = 0.94 + 0.06 * Math.sin(frame * 0.02)
 
-        // Uncluster every 60 seconds (~3600 frames @ 60fps)
+        const landingX = target ? target.left + target.width / 2 : 0
+        const landingY = target ? target.top + 24 : 0
+
+        if (target) {
+          let landingBoid: Boid | null = null
+          let minDist = Infinity
+          for (const b of flock) {
+            if (b.isLanded) {
+              landingBoid = b
+              break
+            }
+            const d = Math.hypot(b.x - landingX, b.y - landingY)
+            if (d < minDist) {
+              minDist = d
+              landingBoid = b
+            }
+          }
+          if (landingBoid) {
+            if (landingBoid.isLanded) {
+            } else {
+              const dx = landingX - landingBoid.x
+              const dy = landingY - landingBoid.y
+              const d = Math.hypot(dx, dy)
+              if (d < 12) {
+                landingBoid.isLanded = true
+                landingBoid.landX = landingX
+                landingBoid.landY = landingY
+              } else {
+                const steer = 0.14 * Math.min(1, 80 / d)
+                landingBoid.vx += (dx / d) * steer
+                landingBoid.vy += (dy / d) * steer
+              }
+            }
+          }
+        } else {
+          for (const b of flock) {
+            if (b.isLanded) {
+              b.isLanded = false
+              b.vx = (Math.random() - 0.5) * 1.5
+              b.vy = -2 - Math.random() * 1
+            }
+          }
+        }
+
         if (frame > 0 && frame % 3600 === 0) {
-          for (const boid of flock) boid.scatter()
+          for (const boid of flock) {
+            if (!boid.isLanded) boid.scatter()
+          }
         }
 
         ctx.clearRect(0, 0, width, height)
 
+        const visibleRatio = Math.max(0.12, 1 - sy / 2200)
+        const jumpOffset = Math.sin(frame * 0.18) * 5
+
         for (let boid of flock) {
+          if (boid.isLanded) {
+            if (boid.drawSeed < visibleRatio) boid.draw(ctx, jumpOffset)
+            continue
+          }
           boid.edges(width, height)
           boid.flock(flock)
           boid.interact(smoothX, smoothY, hoverProgress, width, height, breath)
           boid.update()
-          boid.draw(ctx)
+          if (boid.drawSeed < visibleRatio) boid.draw(ctx)
         }
       } catch (err) {
         console.error('BirdsFly render error:', err)

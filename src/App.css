@@ -7,6 +7,12 @@
   padding: 0 0.5rem;
 }
 
+@media (max-width: 480px) {
+  .section-inner {
+    padding: 0 1rem;
+  }
+}
+
 .section-title {
   margin: 0;
   font-size: 1.75rem;
@@ -21,4 +27,22 @@
   color: var(--text-muted);
   line-height: 1.6;
   max-width: 560px;
+}
+
+/* Full-page birds background */
+.birds-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.birds-bg canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
 }

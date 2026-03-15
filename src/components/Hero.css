@@ -195,6 +195,7 @@
 
 .hero-cta-primary:hover {
   background: #67e8f9;
+  color: #0a0a0b;
   transform: translateY(-4px) scale(1.06);
   box-shadow: 0 16px 48px rgba(34, 211, 238, 0.55), 0 0 60px rgba(34, 211, 238, 0.3);
 }
@@ -212,6 +213,63 @@
   background: rgba(34, 211, 238, 0.08);
   box-shadow: 0 0 32px rgba(34, 211, 238, 0.25);
   transform: translateY(-2px);
+}
+
+/* Talk bubble — same rounded rect as other buttons, with speech tail */
+.hero-cta-bubble {
+  position: relative;
+  background: var(--bg-glass);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(12px);
+}
+
+.hero-cta-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 1.5rem;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--border-strong);
+  transition: border-top-color 0.25s ease;
+}
+
+.hero-cta-bubble:hover {
+  border-color: rgba(34, 211, 238, 0.6);
+  color: var(--accent);
+  background: rgba(34, 211, 238, 0.08);
+  box-shadow: 0 0 32px rgba(34, 211, 238, 0.25);
+  transform: translateY(-2px);
+}
+
+.hero-cta-bubble:hover::after {
+  border-top-color: rgba(34, 211, 238, 0.6);
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .hero-ctas {
+    gap: 0.75rem;
+  }
+
+  .hero-cta {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
 }
 
 /* Scroll indicator — line + bouncing dot */

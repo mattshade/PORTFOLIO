@@ -39,7 +39,7 @@ export const projects: Project[] = [
   },
   {
     id: 'executive-ai-dashboard',
-    title: 'Executive AI Usage Dashboard',
+    title: 'AI Usage Dashboard',
     description: 'Tracking AI tool usage (Slack AI, ChatGPT, Firefly, Copilot) with KPIs, license allocation, and utilization by segment.',
     tech: ['React', 'Vite', 'TypeScript', 'Recharts'],
     href: '/projects/executive-ai-dashboard/',
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     id: 'mattshadecooks',
     title: 'Matt Shade Cooks',
     description: 'Recipes and cooking notes.',
-    tech: ['Web'],
+    tech: ['Next.js', 'TypeScript', 'Tailwind'],
     href: 'https://mattshadecooks.com',
     external: true,
   },

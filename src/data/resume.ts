@@ -13,7 +13,10 @@ export const resume = {
   name: 'Matt Shade',
   title: 'Engineering & Design',
   tagline: 'Creating and leading teams that craft AI-powered tools and interfaces to turn data into clarity and action.',
-  email: '', // e.g. matt@example.com
+  email: 'hello@mattshade.com',
+  /** Netlify Forms: used when deployed (no config needed). Formspree: set if you prefer it over Netlify. */
+  contactFormEndpoint: '', // e.g. https://formspree.io/f/yourformid for Formspree
+  contactFormName: 'contact', // Must match the hidden form in index.html for Netlify
   linkedin: '', // e.g. https://linkedin.com/in/mattshade
   github: '',   // e.g. https://github.com/mattshade
   resumePdf: '/Matt_Shade.pdf',
@@ -74,11 +77,14 @@ export const resume = {
     'Next.js',
     'Vite',
     'Tailwind CSS',
-    'Recharts',
     'Node.js',
     'REST APIs',
     'Data visualization',
-    'Executive dashboards',
+    'Antigravity',
+    'Claude',
+    'Figma Make',
+    'Runway Ai',
+    'ElevenLabs',
     'ChatGPT',
     'Gemini',
     'GitHub Copilot',

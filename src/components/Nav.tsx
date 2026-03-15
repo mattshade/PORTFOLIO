@@ -1,16 +1,32 @@
+import { Link, useLocation } from 'react-router-dom'
 import './Nav.css'
 
 export function Nav() {
+  const location = useLocation()
+  const isHome = location.pathname === '/'
+
   return (
     <nav className="nav" aria-label="Main">
       <div className="nav-inner">
-        <a href="#" className="nav-home">
+        <Link to="/" className="nav-home">
           <img src="/favicon.svg" alt="Bird Logo" className="nav-logo" width="18" height="18" />
           Matt Shade
-        </a>
+        </Link>
         <div className="nav-links">
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
+          {isHome ? (
+            <>
+              <a href="#projects">Projects</a>
+              <a href="#experience">Experience</a>
+            </>
+          ) : (
+            <>
+              <Link to="/#projects">Projects</Link>
+              <Link to="/#experience">Experience</Link>
+            </>
+          )}
+          <Link to="/resume" className={location.pathname === '/resume' ? 'nav-link-active' : ''}>
+            Resume
+          </Link>
         </div>
       </div>
     </nav>

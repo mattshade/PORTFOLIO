@@ -17,7 +17,7 @@ const MOCK_TEAMS = ['All Teams', 'platform', 'frontend', 'backend', 'data', 'dev
 
 export function Header() {
     const {
-        org, teams, datePreset, search, isDemoMode, darkMode, availableTeams,
+        org, teams, datePreset, search, darkMode, availableTeams,
         setOrg, setTeams, setDatePreset, setSearch, toggleDarkMode, data,
         setSelectedUser,
     } = useDashboardStore();
@@ -50,25 +50,17 @@ export function Header() {
 
     return (
         <>
-            {isDemoMode && (
-                <div className="demo-banner" role="status">
-                    <span>🎭</span>
-                    <span>
-                        Demo Mode — showing realistic mock data.
-                        Set <code>VITE_GITHUB_TOKEN</code> + <code>VITE_DEMO_MODE=false</code> to connect to the GitHub API.
-                    </span>
-                </div>
-            )}
+
             <header className="header">
                 <div className="header-inner">
                     {/* Brand */}
                     <div className="header-brand">
                         <img
-                            src={`${import.meta.env.BASE_URL}copilot-logo.svg`}
+                            src={`${import.meta.env.BASE_URL}github-copilot-icon-logo-brandlogos.net_2b2xhz1k6.svg`}
                             alt="GitHub Copilot"
                             className="header-logo"
                         />
-                        <span className="header-title">Copilot Metrics</span>
+                        <span className="header-title">GitHub Copilot Metrics</span>
                         <div style={{ paddingLeft: 8, display: 'flex', gap: 6, alignItems: 'center' }}>
                             <span className="badge" style={{ background: 'rgba(255,255,255,0.08)', color: 'var(--text-secondary)' }}>
                                 {org}

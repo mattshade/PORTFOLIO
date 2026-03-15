@@ -1,21 +1,14 @@
-import { Nav } from './components/Nav'
-import { Hero } from './components/Hero'
-import { Projects } from './components/Projects'
-import { Experience } from './components/Experience'
-import { Footer } from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import { HomePage } from './pages/HomePage'
+import { ResumePage } from './pages/ResumePage'
 import './App.css'
 
 function App() {
   return (
-    <>
-      <Nav />
-      <main>
-        <Hero />
-        <Projects />
-        <Experience />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/resume" element={<ResumePage />} />
+    </Routes>
   )
 }
 

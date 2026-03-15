@@ -21,7 +21,7 @@
       .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 20px 48px 20px;
       }
 
       .header {
@@ -49,17 +49,11 @@
         gap: 12px;
       }
 
-      .header-logo {
-        width: 40px;
-        height: 40px;
-        background: #2563eb;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
+      .header-logo-img {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+        flex-shrink: 0;
       }
 
       .header-text h1 {
@@ -212,9 +206,10 @@
 
       .datasets-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 24px;
         margin-top: 30px;
+        align-items: stretch;
       }
       
       @media (max-width: 1200px) {
@@ -226,6 +221,9 @@
       }
 
       .dataset-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         background: white;
         border-radius: 12px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -241,6 +239,7 @@
       }
 
       .dataset-thumbnail {
+        flex-shrink: 0;
         width: 100%;
         height: 192px;
         object-fit: cover;
@@ -253,7 +252,14 @@
       }
 
       .dataset-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         padding: 24px;
+      }
+
+      .dataset-description {
+        flex: 1;
       }
 
       .dataset-header {
@@ -346,15 +352,11 @@
       <div class="header-content">
         <div class="header-main">
           <div class="header-left">
-            <div class="header-logo">📊</div>
+            <img src="logo.png" alt="Data Hub" class="header-logo-img" />
             <div class="header-text">
               <h1>Data Hub</h1>
               <p>Comprehensive Dataset Library</p>
             </div>
-          </div>
-          <div class="header-right">
-            <span>👥</span>
-            <span>Internal & External Access</span>
           </div>
         </div>
       </div>
@@ -631,12 +633,11 @@
             </div>
           </div>
         </div>
-      </div>
 
-        <!-- Commerce Analytics -->
+        <!-- Commerce Analytics (Sales Channels) -->
         <div class="dataset-card" data-href="commerce-analytics.html">
           <div class="dataset-thumbnail">
-            <img src="https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Commerce Analytics" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Commerce Analytics" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 48px; color: #6c757d;">🛒</div>
           </div>
           <div class="dataset-content">

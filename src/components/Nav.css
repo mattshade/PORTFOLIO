@@ -50,3 +50,25 @@
 .nav-links a:hover {
   color: var(--text);
 }
+
+.nav-link-active {
+  color: var(--accent) !important;
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+  }
+
+  .nav-home {
+    font-size: 0.9375rem;
+  }
+}

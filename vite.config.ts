@@ -50,5 +50,10 @@ export default defineConfig({
   base: '/',
   server: {
     fs: { allow: [path.resolve(process.cwd(), 'dist')], strict: false },
+    hmr: true,
+    watch: {
+      // Ensure src/data changes trigger HMR
+      ignored: ['**/node_modules/**', '**/dist/**', '**/RECENT-PROJECTS/**'],
+    },
   },
 })

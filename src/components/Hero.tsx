@@ -1,20 +1,12 @@
-import { useState, useCallback, useEffect, MouseEvent } from 'react'
+import { useState, useCallback, MouseEvent } from 'react'
 import { resume } from '../data/resume'
-import { BirdsFly } from './BirdsFly'
+import { SayHiBubble } from './SayHiBubble'
 import './Hero.css'
 
 export function Hero() {
   const [mouseX, setMouseX] = useState(0.5)
   const [mouseY, setMouseY] = useState(0.5)
   const [isHovering, setIsHovering] = useState(false)
-  const [birdsReady, setBirdsReady] = useState(false)
-
-  useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      requestAnimationFrame(() => setBirdsReady(true))
-    })
-    return () => cancelAnimationFrame(id)
-  }, [])
 
   const handleMouseMove = useCallback((e: MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -33,7 +25,6 @@ export function Hero() {
       style={
         isHovering
           ? {
-              // Smooth cursor position for ambient glow (0–1)
               ['--cursor-x' as string]: mouseX,
               ['--cursor-y' as string]: mouseY,
             }
@@ -41,7 +32,6 @@ export function Hero() {
       }
     >
       <div className="hero-bg">
-        {birdsReady && <BirdsFly mouseX={mouseX} mouseY={mouseY} isHovering={isHovering} />}
         <div className="hero-cursor-glow" aria-hidden />
         <div className="hero-grid" aria-hidden />
         <div className="hero-glow hero-glow-1" aria-hidden />
@@ -69,6 +59,7 @@ export function Hero() {
           <a href="#experience" className="hero-cta hero-cta-secondary">
             Experience
           </a>
+          {resume.email && <SayHiBubble />}
         </div>
         <a href="#projects" className="hero-scroll" aria-label="Scroll to projects">
           <span className="hero-scroll-line" />
