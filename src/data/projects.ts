@@ -51,6 +51,13 @@ export const projects: Project[] = [
     tech: ['HTML', 'CSS', 'JavaScript'],
     href: '/projects/ai-data-hub/',
   },
+  {
+    id: 'cfr-dashboard-bugz',
+    title: 'CFR Dashboard',
+    description: 'Change Failure Rate and deployment metrics. DORA-style KPIs, trend chart, and bug counts.',
+    tech: ['HTML', 'Chart.js', 'JavaScript'],
+    href: '/projects/cfr-dashboard-bugz/',
+  },
   // —— External (live sites) — at bottom ———
   {
     id: 'dianachelaru',

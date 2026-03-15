@@ -13,7 +13,7 @@ export const resume = {
   name: 'Matt Shade',
   title: 'Engineering & Design',
   tagline: 'Creating and leading teams that craft AI-powered tools and interfaces to turn data into clarity and action.',
-  email: 'hello@mattshade.com',
+  email: 'hellomattshade@gmail.com',
   /** Netlify Forms: used when deployed (no config needed). Formspree: set if you prefer it over Netlify. */
   contactFormEndpoint: '', // e.g. https://formspree.io/f/yourformid for Formspree
   contactFormName: 'contact', // Must match the hidden form in index.html for Netlify

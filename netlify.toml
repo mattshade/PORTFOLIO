@@ -25,6 +25,10 @@
   from = "/projects/github-copilot-dashboard/*"
   to = "/projects/github-copilot-dashboard/index.html"
   status = 200
+[[redirects]]
+  from = "/projects/cfr-dashboard-bugz/*"
+  to = "/projects/cfr-dashboard-bugz/index.html"
+  status = 200
 # ai-data-hub: static HTML pages — no redirect; files served directly
 # Portfolio SPA fallback (catch-all)
 [[redirects]]

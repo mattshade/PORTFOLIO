@@ -36,7 +36,7 @@ export function Projects({ onCardReading }: { onCardReading?: (rect: DOMRect | n
           {projects.map((p, i) => (
             <article
               key={p.id}
-              className={`project-card glass${p.id === 'mattshadecooks' ? ' project-card-wide' : ''}`}
+              className="project-card glass"
               style={{ animationDelay: `${i * 60}ms` }}
               onMouseEnter={handleEnter}
               onMouseLeave={handleLeave}

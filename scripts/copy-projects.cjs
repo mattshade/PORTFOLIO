@@ -22,6 +22,7 @@ const PROJECT_SOURCES = [
   { slug: 'dev-agents-dashboard', dir: 'dev-agents-dashboard', output: 'out' },
   { slug: 'executive-ai-dashboard', dir: 'Executive AI Usage Dashboard', output: 'dist' },
   { slug: 'ai-data-hub', dir: 'ai-data-hub', output: null }, // copy root HTML + assets
+  { slug: 'cfr-dashboard-bugz', dir: 'cfr-dashboard-bugz', output: null }, // static HTML, mock data
 ]
 
 const SKIP_DIRS = new Set(['.git', 'node_modules', '.next'])
@@ -65,7 +66,7 @@ for (const { slug, dir, output } of PROJECT_SOURCES) {
       console.warn('Skip (no build output):', dir, output)
     }
   } else {
-    // ai-data-hub: copy root HTML and assets
+    // Static projects (ai-data-hub, cfr-dashboard-bugz): copy root HTML and assets
     copyDir(srcDir, destDir)
     // Detail pages link to index.html; always sync from index.aspx so updates (e.g. click handlers) apply
     const indexPath = path.join(destDir, 'index.html')
