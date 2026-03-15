@@ -259,7 +259,7 @@
 @media (max-width: 480px) {
   .hero {
     align-items: flex-start;
-    padding: 15vh 1rem 3rem;
+    padding: 20vh 1rem 3rem;
   }
 
   .hero-title {
