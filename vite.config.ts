@@ -45,8 +45,20 @@ function serveProjectsPlugin() {
   }
 }
 
+// Inject SITE_URL at build time (Netlify sets URL; fallback for local)
+const SITE_URL = process.env.URL || process.env.VITE_SITE_URL || 'https://mattshade.com'
+
+function injectSiteUrlPlugin() {
+  return {
+    name: 'inject-site-url',
+    transformIndexHtml(html: string) {
+      return html.replace(/__SITE_URL__/g, SITE_URL)
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [serveProjectsPlugin(), react()],
+  plugins: [injectSiteUrlPlugin(), serveProjectsPlugin(), react()],
   base: '/',
   server: {
     fs: { allow: [path.resolve(process.cwd(), 'dist')], strict: false },

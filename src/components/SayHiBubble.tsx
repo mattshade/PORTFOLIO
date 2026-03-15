@@ -38,17 +38,20 @@ export function SayHiBubble() {
       }
     } else if (useNetlify) {
       setStatus('submitting')
+      // Netlify Forms: form-name routes to the form, bot-field is honeypot (keep empty)
       const payload = new URLSearchParams({
         'form-name': resume.contactFormName,
         name,
         email,
         message,
+        'bot-field': '',
       })
       try {
         const res = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: payload,
+          credentials: 'same-origin',
         })
         if (res.ok) {
           setStatus('success')
