@@ -5,7 +5,7 @@
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
 
 # SPA fallbacks for hosted projects (must come before portfolio catch-all)
 [[redirects]]
