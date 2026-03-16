@@ -9,7 +9,7 @@ export function Nav() {
     <nav className="nav" aria-label="Main">
       <div className="nav-inner">
         <Link to="/" className="nav-home">
-          <img src="/favicon.svg" alt="Bird Logo" className="nav-logo" width="18" height="18" />
+          <img src="/favicon.svg" alt="" className="nav-logo" width="18" height="18" />
           Matt Shade
         </Link>
         <div className="nav-links">

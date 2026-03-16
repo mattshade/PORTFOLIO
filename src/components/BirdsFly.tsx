@@ -22,8 +22,8 @@ class Boid {
     this.landY = 0
     this.vx = (Math.random() * 2 - 1) * 2
     this.vy = (Math.random() * 2 - 1) * 2
-    this.maxSpeed = 2.5
-    this.maxForce = 0.05
+    this.maxSpeed = 2.0
+    this.maxForce = 0.04
     this.index = index
   }
 
@@ -218,18 +218,27 @@ class Boid {
     const dx = this.x - cx
     const dy = this.y - cy
     const d = Math.hypot(dx, dy)
-    const outerRadius = 220
-    const innerRadius = 30
+    const outerRadius = 280
+    const innerRadius = 40
     if (d > outerRadius || d < 4) return
 
     const dirX = dx / d
     const dirY = dy / d
+    
+    // Gentle swirling current vector
+    const swirlX = dirY
+    const swirlY = -dirX
+
     const eff = influence * breath
     const t = d / outerRadius
     const bell = 1 - t * t
-    const repulsionStrength = 0.18 * eff * (1 - (innerRadius / d)) * bell
-    this.vx += dirX * repulsionStrength
-    this.vy += dirY * repulsionStrength
+    
+    // Organic, soft repel combined with a strong swirling motion
+    const pushStrength = 0.05 * eff * (1 - (innerRadius / d)) * bell
+    const swirlStrength = 0.14 * eff * bell
+    
+    this.vx += dirX * pushStrength + swirlX * swirlStrength
+    this.vy += dirY * pushStrength + swirlY * swirlStrength
   }
 
   update() {
@@ -258,16 +267,31 @@ class Boid {
     ctx.translate(drawX, drawY)
     ctx.rotate(angle)
 
+    // Boid: logo shape rotated so apex points in flight direction (right = +X)
     ctx.beginPath()
-    ctx.moveTo(0, 0)
-    ctx.lineTo(-6, -4)
-    ctx.lineTo(-4, 0)
-    ctx.lineTo(-6, 4)
+    ctx.moveTo(2.5, 0)         // Apex (front, direction of travel)
+    ctx.lineTo(-0.8, -1.5)     // Upper shoulder
+    ctx.lineTo(-2, -2.3)       // Upper outer spike
+    ctx.lineTo(-0.6, -0.8)     // Upper V-notch
+    ctx.lineTo(-2.5, 0)        // Center spike (back)
+    ctx.lineTo(-0.6, 0.8)      // Lower V-notch
+    ctx.lineTo(-2, 2.3)        // Lower outer spike
+    ctx.lineTo(-0.8, 1.5)      // Lower shoulder
     ctx.closePath()
 
-    ctx.fillStyle = 'rgba(34, 211, 238, 0.85)'
-    ctx.shadowBlur = 4
-    ctx.shadowColor = 'rgba(34, 211, 238, 0.5)'
+    ctx.fillStyle = 'rgba(34, 211, 238, 0.95)'
+    ctx.shadowBlur = 6
+    ctx.shadowColor = 'rgba(34, 211, 238, 0.6)'
+    ctx.fill()
+
+    // Bullseye eye: white ring + black pupil
+    ctx.beginPath()
+    ctx.arc(0.4, 0, 0.85, 0, Math.PI * 2)
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.95)'
+    ctx.fill()
+    ctx.beginPath()
+    ctx.arc(0.4, 0, 0.35, 0, Math.PI * 2)
+    ctx.fillStyle = 'rgba(10, 10, 11, 0.95)'
     ctx.fill()
 
     ctx.restore()
