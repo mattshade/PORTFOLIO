@@ -25,9 +25,13 @@ for (const { dir, output } of PROJECTS_TO_BUILD) {
     continue
   }
   console.log('\n▶ Building', dir, '...')
+  // Force mock/demo mode for portfolio — no real API calls
+  const buildEnv = dir === 'github-copilot-dashboard'
+    ? { ...process.env, VITE_DEMO_MODE: 'true' }
+    : process.env
   try {
     execSync('npm install', { cwd: projectPath, stdio: 'inherit' })
-    execSync('npm run build', { cwd: projectPath, stdio: 'inherit' })
+    execSync('npm run build', { cwd: projectPath, stdio: 'inherit', env: buildEnv || process.env })
     console.log('✓', dir)
   } catch (err) {
     console.error('Failed:', dir)

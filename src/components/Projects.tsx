@@ -32,6 +32,9 @@ export function Projects({ onCardReading }: { onCardReading?: (rect: DOMRect | n
     <section id="projects" className="section projects">
       <div className="section-inner">
         <h2 className="section-title">Projects</h2>
+        <p className="section-desc projects-intro">
+          Interactive demos of dashboards and tools I&apos;ve built. All use sample data—no&nbsp;real or internal data.
+        </p>
         <div className="projects-grid">
           {projects.map((p, i) => (
             <article
@@ -47,6 +50,11 @@ export function Projects({ onCardReading }: { onCardReading?: (rect: DOMRect | n
                 rel={p.external ? 'noopener noreferrer' : undefined}
                 className="project-link"
               >
+                {p.thumbnail && (
+                  <div className="project-thumb-wrap">
+                    <img src={p.thumbnail} alt="" className="project-thumb" />
+                  </div>
+                )}
                 <div className="project-header">
                   <h3 className="project-title">{p.title}</h3>
                   {p.external && (

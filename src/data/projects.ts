@@ -15,46 +15,46 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // —— Internal (hosted alongside this site at /projects/...) ——
+  // —— Internal demos (interactive UIs with sample data—no real/internal data) ——
   {
     id: 'chatgpt-dashboard',
     title: 'ChatGPT Enablement Dashboard',
-    description: 'Executive dashboard for adoption, engagement, and Office Hours analytics. KPIs, opportunity finder, topic extraction, presentation mode.',
+    description: 'Demo of an exec dashboard: adoption KPIs, feature usage, and Office Hours analytics. Sample data only.',
     tech: ['React', 'Vite', 'TypeScript', 'Tailwind', 'Recharts'],
     href: '/projects/chatgpt-dashboard/',
   },
   {
     id: 'github-copilot-dashboard',
     title: 'GitHub Copilot Metrics Dashboard',
-    description: 'Copilot usage and adoption metrics across teams. License utilization, activity trends, and adoption analytics.',
+    description: 'Demo showing seat utilization, activity trends, and adoption by team. Mock data.',
     tech: ['React', 'Vite', 'TypeScript', 'Recharts', 'Zustand'],
     href: '/projects/github-copilot-dashboard/',
   },
   {
     id: 'dev-agents-dashboard',
     title: 'Developer Agent Competitive Analysis',
-    description: 'Executive-level comparison of Google Antigravity, Claude Code, GitHub Copilot, OpenAI Codex, and Cursor. Scorecards and recommendations.',
+    description: 'Executive comparison of Antigravity, Claude Code, Copilot, Codex, and Cursor. Scorecards and recs.',
     tech: ['Next.js', 'TypeScript', 'Tailwind'],
     href: '/projects/dev-agents-dashboard/',
   },
   {
     id: 'executive-ai-dashboard',
     title: 'AI Usage Dashboard',
-    description: 'Tracking AI tool usage (Slack AI, ChatGPT, Firefly, Copilot) with KPIs, license allocation, and utilization by segment.',
+    description: 'Demo tracking AI tool usage (Slack AI, ChatGPT, Firefly, Copilot). KPIs and license views. Sample data.',
     tech: ['React', 'Vite', 'TypeScript', 'Recharts'],
     href: '/projects/executive-ai-dashboard/',
   },
   {
     id: 'ai-data-hub',
     title: 'AI Data Hub',
-    description: 'Data catalog for AI and analytics datasets: browse, search, filter, and detailed dataset pages. Static, responsive.',
+    description: 'Data catalog UI: browse, search, filter AI/analytics datasets. Static demo.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     href: '/projects/ai-data-hub/',
   },
   {
     id: 'cfr-dashboard-bugz',
     title: 'CFR Dashboard',
-    description: 'Change Failure Rate and deployment metrics. DORA-style KPIs, trend chart, and bug counts.',
+    description: 'DORA-style deployment metrics demo. Change failure rate, trends. Sample data.',
     tech: ['HTML', 'Chart.js', 'JavaScript'],
     href: '/projects/cfr-dashboard-bugz/',
   },

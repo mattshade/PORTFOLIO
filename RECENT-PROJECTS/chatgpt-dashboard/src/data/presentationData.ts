@@ -46,13 +46,13 @@ const createSegmentRows = (
     return rows;
 };
 
-// 1. Generate Base Segments (generic business units)
+// 1. Generate Base Segments (generic business units — mock data)
 const segments = [
-    { name: "Corporate HQ", enabled: 210, active: 182, msgs: 15084 },
-    { name: "Regional Operations", enabled: 174, active: 137, msgs: 11813 },
-    { name: "International Division", enabled: 169, active: 150, msgs: 19712 },
-    { name: "Content & Editorial", enabled: 135, active: 106, msgs: 7027 },
-    { name: "Media & Lifestyle", enabled: 2, active: 1, msgs: 11 },
+    { name: "Corporate HQ", enabled: 200, active: 175, msgs: 15000 },
+    { name: "Regional Operations", enabled: 175, active: 140, msgs: 12000 },
+    { name: "International Division", enabled: 150, active: 130, msgs: 18000 },
+    { name: "Content & Editorial", enabled: 125, active: 100, msgs: 7000 },
+    { name: "Media & Lifestyle", enabled: 5, active: 2, msgs: 50 },
 ];
 
 let generatedRows: PlatformRow[] = [];
@@ -74,10 +74,10 @@ const assignFeature = (count: number, field: keyof PlatformRow) => {
     }
 };
 
-assignFeature(500, 'toolsMessaged');
-assignFeature(106, 'gptsMessaged');
-assignFeature(101, 'projectsMessaged');
-assignFeature(58, 'projectsCreated');
+assignFeature(480, 'toolsMessaged');
+assignFeature(100, 'gptsMessaged');
+assignFeature(95, 'projectsMessaged');
+assignFeature(50, 'projectsCreated');
 
 export const PRELOADED_PLATFORM_DATA = generatedRows;
 
@@ -124,36 +124,36 @@ const createDummyParticipants = (
     return result;
 }
 
-// 3. Office Hours Data
+// 3. Office Hours Data (mock)
 export const PRELOADED_MEETINGS: Meeting[] = [
     {
         id: "dec-10-meet",
         title: "Office Hours - Dec 10: Prompt Engineering Basics",
         dateStr: "2025-12-10",
         dateObj: new Date("2025-12-10"),
-        pageViews: 5,
-        registered: 3,
+        pageViews: 6,
+        registered: 4,
         canceled: 0,
-        conversionRate: 60.0,
+        conversionRate: 67,
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
             { department: "Content", jobTitle: "Editor", question: "How to prompt for summaries?" }
-        ], 3)
+        ], 4)
     },
     {
         id: "jan-21-meet",
         title: "Office Hours - Jan 21: Advanced Workflows",
         dateStr: "2026-01-21",
         dateObj: new Date("2026-01-21"),
-        pageViews: 10,
-        registered: 5,
+        pageViews: 12,
+        registered: 6,
         canceled: 0,
-        conversionRate: 50.0,
+        conversionRate: 50,
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
             { department: "Operations", jobTitle: "Producer", question: "Is Copilot better?" },
             { department: "Marketing", jobTitle: "Specialist", question: "Image generation rights?" }
-        ], 5)
+        ], 6)
     },
     {
         id: "jan-27-meet",
@@ -163,7 +163,7 @@ export const PRELOADED_MEETINGS: Meeting[] = [
         pageViews: 15,
         registered: 10,
         canceled: 0,
-        conversionRate: 66.7,
+        conversionRate: 67,
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
             { department: "Legal", jobTitle: "Counsel", question: "Governance on uploads?" },
@@ -175,13 +175,13 @@ export const PRELOADED_MEETINGS: Meeting[] = [
         title: "Office Hours - Feb 4: New Features",
         dateStr: "2026-02-04",
         dateObj: new Date("2026-02-04"),
-        pageViews: 9,
-        registered: 7,
+        pageViews: 8,
+        registered: 6,
         canceled: 0,
-        conversionRate: 77.8,
+        conversionRate: 75,
         sourceFile: "Preloaded",
         participants: createDummyParticipants([
             { department: "Finance", jobTitle: "Analyst", question: "Measurement ROI?" }
-        ], 7)
+        ], 6)
     }
 ];
