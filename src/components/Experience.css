@@ -22,7 +22,7 @@
 }
 
 .experience-item:hover {
-  border-color: rgba(34, 211, 238, 0.15);
+  border-color: rgba(45, 212, 191, 0.4);
 }
 
 .experience-header {
@@ -116,8 +116,8 @@
 }
 
 .skills-item:hover {
-  border-color: rgba(34, 211, 238, 0.25);
-  box-shadow: 0 0 12px rgba(34, 211, 238, 0.15);
+  border-color: rgba(45, 212, 191, 0.4);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.15);
 }
 
 @media (max-width: 768px) {

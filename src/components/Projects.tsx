@@ -32,7 +32,7 @@ export function Projects({ onCardReading }: { onCardReading?: (rect: DOMRect | n
     <section id="projects" className="section projects">
       <div className="section-inner">
         <h2 className="section-title">Projects</h2>
-        <p className="section-desc projects-intro">
+        <p className="section-desc projects-intro" style={{ whiteSpace: 'nowrap' }}>
           Interactive demos of dashboards and tools I&apos;ve built. All use sample data—no&nbsp;real or internal data.
         </p>
         <div className="projects-grid">

@@ -127,6 +127,10 @@
   .project-tech li {
     font-size: 0.875rem;
   }
+  
+  .projects-intro {
+    white-space: normal !important;
+  }
 }
 
 @media (max-width: 480px) {
