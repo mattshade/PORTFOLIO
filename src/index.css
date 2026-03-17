@@ -43,6 +43,11 @@ main {
   padding-top: 72px; /* Clear fixed nav */
 }
 
+[id="projects"],
+[id="experience"] {
+  scroll-margin-top: 80px;
+}
+
 a {
   color: var(--accent);
   text-decoration: none;

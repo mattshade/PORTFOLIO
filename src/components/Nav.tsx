@@ -24,7 +24,15 @@ export function Nav() {
               <Link to="/#experience">Experience</Link>
             </>
           )}
-          <Link to="/resume" className={location.pathname === '/resume' ? 'nav-link-active' : ''}>
+          <Link
+            to="/resume"
+            className={location.pathname === '/resume' ? 'nav-link-active' : ''}
+            onClick={() => {
+              if (location.pathname === '/resume') {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }
+            }}
+          >
             Resume
           </Link>
         </div>
