@@ -20,8 +20,8 @@ interface ToolData {
 const toolData: ToolData[] = [
   {
     name: 'Slack AI',
-    activeUsers: 659,
-    allocatedLicenses: 659,
+    activeUsers: 650,
+    allocatedLicenses: 650,
     contextLabel: 'Total active users',
     color: '#e01e5a',
     icon: 'Slack',
@@ -29,36 +29,36 @@ const toolData: ToolData[] = [
   },
   {
     name: 'ChatGPT',
-    activeUsers: 576,
-    allocatedLicenses: 690,
+    activeUsers: 575,
+    allocatedLicenses: 700,
     contextLabel: 'Users with Activity (January)',
     color: '#10b981',
     icon: 'MessageSquare',
-    tooltip: 'Usage-based licensing model. 690 enabled licenses, 98 pending users (invited but not signed in).'
+    tooltip: 'Usage-based licensing model. 700 enabled licenses, 100 pending users (invited but not signed in).'
   },
   {
     name: 'Adobe Firefly',
-    activeUsers: 317,
-    allocatedLicenses: 498,
-    contextLabel: 'of 498 purchased licenses',
+    activeUsers: 300,
+    allocatedLicenses: 500,
+    contextLabel: 'of 500 purchased licenses',
     color: '#ef4444',
     icon: 'Sparkles',
     tooltip: 'Firefly licenses are purchased, not provisioned.'
   },
   {
     name: 'Microsoft Copilot',
-    activeUsers: 156,
-    allocatedLicenses: 305,
-    contextLabel: 'of 305 allocated seats',
+    activeUsers: 150,
+    allocatedLicenses: 300,
+    contextLabel: 'of 300 allocated seats',
     color: '#8b5cf6',
     icon: 'Bot',
     tooltip: 'Seats include enabled and pending users.'
   },
   {
     name: 'GitHub Copilot',
-    activeUsers: 124,
-    allocatedLicenses: 176,
-    contextLabel: 'of 176 allocated seats',
+    activeUsers: 125,
+    allocatedLicenses: 175,
+    contextLabel: 'of 175 allocated seats',
     color: '#3b82f6',
     icon: 'Github',
     tooltip: 'Seats include enabled and pending users.'

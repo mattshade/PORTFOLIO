@@ -47,7 +47,7 @@ export default function App() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-gray-500 mb-1">Active Users</p>
-                <p className="text-2xl text-gray-900">659</p>
+                <p className="text-2xl text-gray-900">650</p>
                 <p className="text-xs text-gray-500 mt-1">Total observed users</p>
               </div>
             </div>
@@ -63,12 +63,12 @@ export default function App() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-gray-500 mb-1">Licenses Purchased</p>
-                <p className="text-2xl text-gray-900">498</p>
+                <p className="text-2xl text-gray-900">500</p>
               </div>
               <div className="border-t border-gray-100 pt-3">
                 <p className="text-xs text-gray-500 mb-1">Active Users</p>
-                <p className="text-2xl text-gray-900">317</p>
-                <p className="text-xs text-green-600 mt-1">64% utilization</p>
+                <p className="text-2xl text-gray-900">300</p>
+                <p className="text-xs text-green-600 mt-1">60% utilization</p>
               </div>
             </div>
           </div>
@@ -84,13 +84,13 @@ export default function App() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-gray-500 mb-1">Seats Allocated</p>
-                <p className="text-2xl text-gray-900">176</p>
-                <p className="text-xs text-gray-500 mt-1">164 Enabled, 12 Pending</p>
+                <p className="text-2xl text-gray-900">175</p>
+                <p className="text-xs text-gray-500 mt-1">160 Enabled, 15 Pending</p>
               </div>
               <div className="border-t border-gray-100 pt-3">
                 <p className="text-xs text-gray-500 mb-1">Active Users</p>
-                <p className="text-2xl text-gray-900">124</p>
-                <p className="text-xs text-green-600 mt-1">70% utilization</p>
+                <p className="text-2xl text-gray-900">125</p>
+                <p className="text-xs text-green-600 mt-1">71% utilization</p>
               </div>
             </div>
           </div>
@@ -106,13 +106,13 @@ export default function App() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-gray-500 mb-1">Seats Allocated</p>
-                <p className="text-2xl text-gray-900">305</p>
-                <p className="text-xs text-gray-500 mt-1">287 Enabled, 18 Pending</p>
+                <p className="text-2xl text-gray-900">300</p>
+                <p className="text-xs text-gray-500 mt-1">280 Enabled, 20 Pending</p>
               </div>
               <div className="border-t border-gray-100 pt-3">
                 <p className="text-xs text-gray-500 mb-1">Active Users</p>
-                <p className="text-2xl text-gray-900">156</p>
-                <p className="text-xs text-amber-600 mt-1">51% utilization</p>
+                <p className="text-2xl text-gray-900">150</p>
+                <p className="text-xs text-amber-600 mt-1">50% utilization</p>
               </div>
             </div>
           </div>
@@ -128,13 +128,13 @@ export default function App() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-gray-500 mb-1">Licenses Allocated</p>
-                <p className="text-2xl text-gray-900">690</p>
-                <p className="text-xs text-gray-500 mt-1">690 Enabled, 98 Pending</p>
+                <p className="text-2xl text-gray-900">700</p>
+                <p className="text-xs text-gray-500 mt-1">700 Enabled, 100 Pending</p>
               </div>
               <div className="border-t border-gray-100 pt-3">
                 <p className="text-xs text-gray-500 mb-1">Users with Activity (January)</p>
-                <p className="text-2xl text-gray-900">576</p>
-                <p className="text-xs text-green-600 mt-1">83% adoption of enabled licenses</p>
+                <p className="text-2xl text-gray-900">575</p>
+                <p className="text-xs text-green-600 mt-1">82% adoption of enabled licenses</p>
               </div>
             </div>
           </div>
@@ -161,13 +161,13 @@ export default function App() {
             <div>
               <div className="text-gray-700 mb-1">Capacity Risk</div>
               <p className="text-gray-600">
-                International Division at 92% Firefly capacity. Consider reallocating unused licenses from Corporate HQ (47% unused) or Regional Operations (41% unused).
+                International Division at 90% Firefly capacity. Consider reallocating unused licenses from Corporate HQ (45% unused) or Regional Operations (40% unused).
               </p>
             </div>
             <div>
               <div className="text-gray-700 mb-1">Adoption Gap</div>
               <p className="text-gray-600">
-                41% of allocated Copilot seats inactive. Target HQ Operations and Marketing teams for onboarding and training initiatives.
+                40% of allocated Copilot seats inactive. Target HQ Operations and Marketing teams for onboarding and training initiatives.
               </p>
             </div>
             <div>
@@ -179,7 +179,7 @@ export default function App() {
           </div>
           <div className="mt-4 pt-4 border-t border-gray-300 text-xs text-gray-600 space-y-1">
             <p>Firefly licenses reflect purchased allocations. Copilot allocation data includes Enabled and Pending licenses.</p>
-            <p>ChatGPT: 690 enabled licenses, 98 pending users (invited but not signed in). January activity: 576 users (83% adoption).</p>
+            <p>ChatGPT: 700 enabled licenses, 100 pending users (invited but not signed in). January activity: 575 users (82% adoption).</p>
             <p>Active users represent recorded activity and are not time-bounded unless specified.</p>
           </div>
         </div>

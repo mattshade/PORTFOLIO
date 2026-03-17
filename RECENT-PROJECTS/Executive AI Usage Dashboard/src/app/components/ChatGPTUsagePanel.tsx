@@ -4,13 +4,13 @@ import { MessageSquare, FolderKanban } from 'lucide-react';
 import chatgptLogo from '@/assets/f1a5c32d7db6bec4f009610ecfa33878d0073736.png';
 
 const data = [
-  { department: 'Analytics', messages: 3420, projects: 28 },
-  { department: 'Editorial', messages: 2890, projects: 31 },
-  { department: 'Marketing', messages: 2650, projects: 22 },
-  { department: 'Operations', messages: 2340, projects: 18 },
-  { department: 'Product', messages: 1980, projects: 24 },
-  { department: 'Engineering', messages: 1720, projects: 15 },
-  { department: 'Sales', messages: 980, projects: 8 },
+  { department: 'Analytics', messages: 3500, projects: 30 },
+  { department: 'Editorial', messages: 3000, projects: 30 },
+  { department: 'Marketing', messages: 2500, projects: 20 },
+  { department: 'Operations', messages: 2000, projects: 20 },
+  { department: 'Product', messages: 2000, projects: 25 },
+  { department: 'Engineering', messages: 1500, projects: 15 },
+  { department: 'Sales', messages: 1000, projects: 10 },
 ];
 
 export function ChatGPTUsagePanel() {
@@ -34,7 +34,7 @@ export function ChatGPTUsagePanel() {
             <span className="text-xs text-green-700">Total Messages</span>
           </div>
           <p className="text-2xl text-green-700">{totalMessages.toLocaleString()}</p>
-          <p className="text-xs text-gray-600 mt-1">Across 478 users with activity</p>
+          <p className="text-xs text-gray-600 mt-1">Across 500 users with activity</p>
         </div>
         <div className="bg-purple-50 rounded-lg p-4">
           <div className="flex items-center gap-2 mb-2">
@@ -78,11 +78,11 @@ export function ChatGPTUsagePanel() {
         <div className="space-y-2">
           <div className="flex items-center justify-between text-xs">
             <span className="text-gray-900">Analytics Team</span>
-            <span className="text-gray-600">~122 msgs/user</span>
+            <span className="text-gray-600">~120 msgs/user</span>
           </div>
           <div className="flex items-center justify-between text-xs">
             <span className="text-gray-900">Editorial Team</span>
-            <span className="text-gray-600">~96 msgs/user</span>
+            <span className="text-gray-600">~100 msgs/user</span>
           </div>
         </div>
       </div>

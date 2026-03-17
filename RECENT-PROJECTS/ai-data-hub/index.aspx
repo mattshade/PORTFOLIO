@@ -421,7 +421,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 5,500,000</span>
+                <span>Records: 5,000,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -450,7 +450,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 3,450,000</span>
+                <span>Records: 3,500,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -479,7 +479,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 1,230,000</span>
+                <span>Records: 1,250,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -508,7 +508,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 2,450,000</span>
+                <span>Records: 2,500,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -537,7 +537,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 5,680,000</span>
+                <span>Records: 5,500,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -566,7 +566,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 892,000</span>
+                <span>Records: 900,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -595,7 +595,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 678,000</span>
+                <span>Records: 700,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -624,7 +624,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 2,180,000</span>
+                <span>Records: 2,000,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>
@@ -653,7 +653,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-icon">📊</span>
-                <span>Records: 1,890,000</span>
+                <span>Records: 2,000,000</span>
               </div>
               <div class="stat-item">
                 <span class="stat-icon">💾</span>

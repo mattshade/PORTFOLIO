@@ -18,37 +18,37 @@ Deploy this application to any static hosting service to create your live demo.
 ## 📊 Available Datasets
 
 ### Editorial Data
-- **5.5M records** - Comprehensive consumable content including articles, cards, videos, images, recipes
+- **5M records** - Comprehensive consumable content including articles, cards, videos, images, recipes
 - **Full versioning** - Complete lineage tracking and document versioning
 - **US-centric content** - Focused on US market with support entities
 
 ### Audience Demographics & Behavior
-- **3.45M records** - Detailed audience insights and behavioral patterns
+- **3.5M records** - Detailed audience insights and behavioral patterns
 - **Demographic analysis** - Age, gender, location, and interest-based segmentation
 - **Engagement metrics** - User interaction and content consumption patterns
 
 ### Digital Content Performance
-- **1.23M records** - Cross-platform content performance metrics
+- **1.25M records** - Cross-platform content performance metrics
 - **Engagement rates** - Click-through rates, time on page, bounce rates
 - **Conversion analytics** - Content-to-action conversion tracking
 
 ### Social Media Engagement Metrics
-- **2.45M records** - Comprehensive social media analytics
+- **2.5M records** - Comprehensive social media analytics
 - **Multi-platform** - Facebook, Instagram, Twitter, LinkedIn data
 - **Engagement tracking** - Likes, shares, comments, reach metrics
 
 ### Streaming Platform Viewership
-- **5.68M records** - Detailed streaming analytics
+- **5.5M records** - Detailed streaming analytics
 - **Multi-platform** - Netflix, Hulu, Amazon Prime, Disney+ data
 - **Viewing patterns** - Watch time, completion rates, device preferences
 
 ### Podcast Listening Analytics
-- **892K records** - In-depth podcast consumption data
+- **900K records** - In-depth podcast consumption data
 - **Performance metrics** - Download stats, listening duration, retention
 - **Geographic distribution** - Global listener demographics
 
 ### Advertising Campaign Performance
-- **678K records** - Comprehensive advertising metrics
+- **700K records** - Comprehensive advertising metrics
 - **Multi-platform** - Google Ads, Facebook Ads, LinkedIn Ads
 - **ROI analysis** - Cost, conversion, and effectiveness metrics
 
@@ -88,7 +88,7 @@ ai-data-hub/
 1. **Download or clone the repository**
    ```bash
    # If using Git
-   git clone https://github.com/nbcnews/ai-data-hub.git
+   git clone https://github.com/your-org/ai-data-hub.git
    cd ai-data-hub
    
    # Or download as ZIP and extract

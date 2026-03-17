@@ -51,7 +51,7 @@ export function Hero() {
           <span className="hero-tagline-highlight">NBCUniversal</span> and{' '}
           <span className="hero-tagline-highlight">CNBC</span>, building and scaling{' '}
           <span className="hero-tagline-highlight">AI-powered</span> products and teams
-          that turn complexity into clarity and action.
+          that turn complexity into clarity.
         </p>
         <div className="hero-ctas" style={{ animationDelay: '240ms' }}>
           <a href="#projects" className="hero-cta hero-cta-primary">

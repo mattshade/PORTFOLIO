@@ -10,12 +10,12 @@ interface EngagementData {
 }
 
 const data: EngagementData[] = [
-  { business: 'Corporate Digital', activeUsers: 14, avgActiveDays: 8.4, totalPrompts: 892, engagementLevel: 'high' },
-  { business: 'Regional Operations', activeUsers: 55, avgActiveDays: 7.8, totalPrompts: 3980, engagementLevel: 'high' },
-  { business: 'International Division', activeUsers: 22, avgActiveDays: 9.1, totalPrompts: 2310, engagementLevel: 'high' },
-  { business: 'Content & Editorial', activeUsers: 13, avgActiveDays: 4.2, totalPrompts: 528, engagementLevel: 'medium' },
-  { business: 'HQ Operations', activeUsers: 6, avgActiveDays: 3.1, totalPrompts: 215, engagementLevel: 'low' },
-  { business: 'Marketing', activeUsers: 4, avgActiveDays: 2.8, totalPrompts: 164, engagementLevel: 'low' },
+  { business: 'Corporate Digital', activeUsers: 15, avgActiveDays: 8.0, totalPrompts: 900, engagementLevel: 'high' },
+  { business: 'Regional Operations', activeUsers: 55, avgActiveDays: 8.0, totalPrompts: 4000, engagementLevel: 'high' },
+  { business: 'International Division', activeUsers: 20, avgActiveDays: 9.0, totalPrompts: 2500, engagementLevel: 'high' },
+  { business: 'Content & Editorial', activeUsers: 15, avgActiveDays: 4.0, totalPrompts: 500, engagementLevel: 'medium' },
+  { business: 'HQ Operations', activeUsers: 5, avgActiveDays: 3.0, totalPrompts: 200, engagementLevel: 'low' },
+  { business: 'Marketing', activeUsers: 5, avgActiveDays: 3.0, totalPrompts: 150, engagementLevel: 'low' },
 ];
 
 const getEngagementColor = (level: string) => {
